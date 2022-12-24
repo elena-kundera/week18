@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+input:required:valid { 
+    border-color: green;
+}
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <!-- 1. Доработать форму-опросник для владельцев 
+    котиков из прошлых заданий, сделав для нее валидацию через HTML5. -->
+    
+    <h1>Новый питомец</h1>
+    <form>
+<fieldset>
+    <legend>Хозяин</legend>
+        <div>
+            <label for="name"> Ваше имя </label>
+            <input type="text" id="name" placeholder="Ваше имя" required/> *
+        </div>
+​
+        <div>
+            <label for="phone"> Ваш номер тлф </label>
+            <input type="text" id="phone" placeholder="Ваш номер телефона" pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/" minlength="10" maxlength="20" required/> *
+        </div>
+​
+        <div>
+            <label for="mail"> Ваш е-мейл</label>
+            <input type="text" placeholder="Ваш е-мейл" id="mail" />
+        </div>
+​
+</fieldset>
+​
+<fieldset>
+    <legend>Котик</legend>
+​
+    <div>
+        <label for="catname">Котика зовут</label> 
+        <input type="text" id="catname" required/> *
+    </div>
+​
+    <div>Порода котика</div>
+    <div>
+        <select>
+            <option value="1">Бурманский кот </option>
+            <option value="2">Сфинкс </option>
+            <option value="3">Сиамская кошка</option>
+            <option value="4">Британская вислоухая</option>
+            <option value="5"> Метис </option>
+        </select>
+    </div>
+​
+    <div> <b>Котик питается:</b></div>
+​
+    <div>
+        Сухой корм <input type="checkbox" /><br />
+        Влажный корм <input type="checkbox" /><br />
+        Объедки со стола <input type="checkbox" />
+    </div>
+​
+    <div>
+        <span> <b>Пол вашего котика: </b></span><br />
+        Самец <input type="radio" name="sex" /><br />
+        Самка <input type="radio" name="sex" />
+    </div>
+​
+    <div>
+        <label for="file"><b>А сюда можно загрузить фото вашего котика:</b></label><br/>
+        <input type="file" id="file" />
+    </div>
+</fieldset>
+​
+    <div>
+        <p>Здесь можно оставить любой комментарий:</p>
+<textarea rows="4"></textarea>
+    </div>
+    
+    <div>
+        <button>Сохранить котика</button>
+    </div>
+​
+​
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
