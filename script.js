@@ -17,7 +17,7 @@ function checkInput(input) {
         {errors.push('Придумайте пароль подлиннее');}
     if (password.value != checkPassword.value) 
         {errors.push('Ваши пароли не совпадают');}
-   }
+    }
 function check() {
     errors = [];
     let inputs = document.querySelectorAll("input");
@@ -29,7 +29,7 @@ function check() {
 
 }
 
-
+//ЭТО СТАРЫЙ КОД
 // const firstName = document.querySelector("#firstName");
 // const lastName = document.querySelector("#lastName");
 // const email = document.querySelector("#email");
@@ -84,4 +84,24 @@ function check() {
 // 3. Доработать сохранение комментариев из прошлого домашнего задания через веб-хранилище, дать возможность пользователю сохранять свое имя и аватарку при вводе и запоминать их.
 //     ⚠️ *Аватарку задаем в виде ссылки на картинку в интернете. Работу с файлами тут использовать не нужно.*
 
-// 4. Сделать локальное хранилище заметок для себя любимой. Не забыть валидацию при добавлении заметки.
+
+
+
+// 4. Сделать локальное хранилище заметок для себя любимой. 
+//Не забыть валидацию при добавлении заметки.
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    let note = localStorage.getItem('note');
+    if(note != null) {
+        myNotesArea.innerHTML = note;
+    }
+});
+
+const btnSendNote = document.querySelector('#sendNote');
+const noteArea = document.querySelector("#noteArea");
+let myNotesArea = document.querySelector("#myNotes");
+
+btnSendNote.onclick = function() {
+    localStorage.setItem('note', noteArea.value);
+    myNotesArea.innerHTML = localStorage.getItem('note');
+    };
